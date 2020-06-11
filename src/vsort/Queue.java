@@ -1,11 +1,17 @@
 package vsort;
 
-public class Queue<T> {
+import java.util.Iterator;
+
+public class Queue<T> implements Iterable<T> {
   private Node<T> head;
   private Node<T> tail;
 
   public Queue() {
     head = tail = null;
+  }
+
+  public Node<T> getHead() {
+    return head;
   }
 
   public void insert(T data) {
@@ -31,6 +37,10 @@ public class Queue<T> {
       throw new Exception("Empty Queue");
     }
     head = head.getLink();
+  }
+
+  public Iterator<T> iterator() {
+    return new QueueIterator<T>(this);
   }
 }
 

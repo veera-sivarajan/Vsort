@@ -5,22 +5,34 @@ import java.io.*;
 
 public class ReadFile {
   private String fileName;
-  
+  private Queue<String> lines;
+
   public ReadFile(String name) {
     fileName = name;
+    lines = new Queue<String>();
   }
 
-  public void read() throws Exception {
+  private void read() throws Exception {
+    //System.out.println("Inside read");
     Scanner input = new Scanner(new File(fileName));
     while(input.hasNextLine()) {
-      System.out.println("Line: " + input.nextLine());
+      String line = input.nextLine();
+      //System.out.println("Adding line");
+      //System.out.print(line);
+      lines.insert(line);
     }
     input.close();
   }
 
-  public static void main(String[] args) throws Exception {
+  public Queue<String> getLines() throws Exception {
+    //System.out.println("Calling read");
+    read();
+    return lines;
+  }
+
+  /*public static void main(String[] args) throws Exception {
     ReadFile obj = new ReadFile("/home/veera/Projects/Vsort/src/vsort/testFile");
     obj.read();
-  }
+  }*/
 }
   
