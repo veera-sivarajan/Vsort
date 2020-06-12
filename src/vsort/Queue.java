@@ -2,7 +2,7 @@ package vsort;
 
 import java.util.Iterator;
 
-public class Queue<T> implements Iterable<T> {
+public class Queue<T> {
   private Node<T> head;
   private Node<T> tail;
 
