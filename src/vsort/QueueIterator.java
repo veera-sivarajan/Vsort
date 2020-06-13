@@ -5,7 +5,7 @@ import java.util.Iterator;
 public class QueueIterator<T> implements Iterator<T> {
   private Node<T> curr;
 
-  public QueueIterator(Queue<T> list) {
+  public QueueIterator(MyQueue<T> list) {
     curr = list.getHead();
   }
 

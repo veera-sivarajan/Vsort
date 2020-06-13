@@ -1,19 +1,21 @@
 package vsort;
 
-import java.util.Iterator;
-
-public class Queue<T> {
+public class MyQueue<T> {
   private Node<T> head;
   private Node<T> tail;
   private int size;
 
-  public Queue() {
+  public MyQueue() {
     head = tail = null;
     size = 0;
   }
 
   public Node<T> getHead() {
     return head;
+  }
+
+  public int getSize() {
+    return size;
   }
 
   public void insert(T data) {
@@ -43,7 +45,7 @@ public class Queue<T> {
     size -= 1;
   }
 
-  public Iterator<T> iterator() {
+  public QueueIterator<T> iterator() {
     return new QueueIterator<T>(this);
   }
 

@@ -5,10 +5,10 @@ import java.io.*;
 
 public class ReadFile {
   private String fileName;
-  private ArrayList<String> lines;
+  private MyQueue<String> lines;
   public ReadFile(String name) {
     fileName = name;
-    lines = new ArrayList<String>(); 
+    lines = new MyQueue<String>(); 
   }
 
   private void read() throws Exception {
@@ -18,12 +18,12 @@ public class ReadFile {
       String line = input.nextLine();
       //System.out.println("Adding line");
       //System.out.print(line);
-      lines.add(line);
+      lines.insert(line);
     }
     input.close();
   }
 
-  public ArrayList<String> getLines() throws Exception {
+  public MyQueue<String> getLines() throws Exception {
     //System.out.println("Calling read");
     read();
     return lines;
