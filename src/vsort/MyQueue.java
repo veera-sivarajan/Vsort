@@ -37,12 +37,14 @@ public class MyQueue<T> {
     return head.getData();
   }
 
-  public void remove() throws Exception {
+  public T remove() throws Exception {
     if (head == null && tail == null) {
       throw new Exception("Empty Queue");
     }
+    T data = head.getData();
     head = head.getLink();
     size -= 1;
+    return data;
   }
 
   public QueueIterator<T> iterator() {

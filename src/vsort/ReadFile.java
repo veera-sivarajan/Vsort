@@ -6,6 +6,7 @@ import java.io.*;
 public class ReadFile {
   private String fileName;
   private MyQueue<String> lines;
+
   public ReadFile(String name) {
     fileName = name;
     lines = new MyQueue<String>(); 
