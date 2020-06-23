@@ -44,6 +44,9 @@ public class MyQueue<T> {
     T data = head.getData();
     head = head.getLink();
     size -= 1;
+    if(head == null) {
+      tail = null;
+    }
     return data;
   }
 
